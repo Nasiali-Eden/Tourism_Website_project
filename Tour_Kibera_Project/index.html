@@ -18,6 +18,40 @@
     </header>
     <section class = welcome_page>
 
+        <script src="https://formspree.io/js/formbutton-v1.min.js" defer></script>
+        <script>
+          window.formbutton=window.formbutton||function(){(formbutton.q=formbutton.q||[]).push(arguments)};
+            
+          formbutton("create", {
+            action: "https://formspree.io/f/xknddawo",
+            title: "How can we help?",
+            fields: [
+              { 
+                type: "email", 
+                label: "Email:", 
+                name: "email",
+                required: true,
+                placeholder: "your@email.com"
+              },
+              {
+                type: "textarea",
+                label: "Message:",
+                name: "message",
+                placeholder: "What's on your mind?",
+              },
+              { type: "submit" }      
+            ],
+            styles: {
+              title: {
+                backgroundColor: "gray"
+              },
+              button: {
+                backgroundColor: "182, 218, 255"
+              }
+            }
+          });
+        </script>
+        
     </section>
 </body>
 </html>
