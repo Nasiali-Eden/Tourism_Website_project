@@ -17,7 +17,7 @@ header {
     justify-content: space-between;
     align-items: center;
     z-index: 99;
-    background-color: aqua;
+    background-color: rgb(117, 4, 125);
 }
 .Logo {
     font-size: 2em;
