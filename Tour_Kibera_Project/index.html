@@ -24,7 +24,7 @@
             
           formbutton("create", {
             action: "https://formspree.io/f/xknddawo",
-            title: "How can we help?",
+            title: "Learn More",
             fields: [
               { 
                 type: "email", 
@@ -35,18 +35,19 @@
               },
               {
                 type: "textarea",
-                label: "Message:",
+                label: "Inquiry:",
                 name: "message",
-                placeholder: "What's on your mind?",
+                placeholder: "How may we help you?",
               },
-              { type: "submit" }      
+              { type: "submit",
+               }    
             ],
             styles: {
               title: {
-                backgroundColor: "gray"
+                backgroundColor: "rgb(117, 7, 125)"
               },
               button: {
-                backgroundColor: "182, 218, 255"
+                backgroundColor: "rgb(117, 7, 125)",
               }
             }
           });
