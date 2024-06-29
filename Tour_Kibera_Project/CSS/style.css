@@ -82,6 +82,10 @@ header{
 .first img{
     height: auto;
     width: 100%;
-  
-   
+}
+.search{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    margin:auto;
 }
