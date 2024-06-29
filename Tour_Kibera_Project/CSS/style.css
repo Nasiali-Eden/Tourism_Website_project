@@ -98,10 +98,42 @@ header {
     height: auto;
     width: 100%;
 }
+.first button{
+    background: #7b3f00;
+    position: absolute;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 2.1em;
+    color: #ffffff;
+    font-weight: 400;
+    transition: .5s;
+    top: 77%;
+    left: 20%;
+    transform: translate(-50%,-50%);
+    flex-direction: row;
+    text-align: center;
+    padding: 8px;
+}
+.first button:hover{
+    background: #ffffff;
+    color: #7b3f00;
+    border: 2px solid #7b3f00;
+}
 
 .search {
     width: 80%;
     display: flex;
     justify-content: center;
     margin: auto;
+}
+.hero-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 50px;
+    flex-direction: row;
+    text-align: center;
 }
