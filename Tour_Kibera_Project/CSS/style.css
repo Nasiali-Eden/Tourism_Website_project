@@ -30,8 +30,10 @@ header {
 }
 
 .logo-img {
-    height: 70px; /* Adjust size as needed */
-    margin-left: 100px; /* Space between logo and text */
+    height: 70px;
+    /* Adjust size as needed */
+    margin-left: 100px;
+    /* Space between logo and text */
 }
 
 
@@ -98,7 +100,8 @@ header {
     height: auto;
     width: 100%;
 }
-.first button{
+
+.first button {
     background: #7b3f00;
     position: absolute;
     outline: none;
@@ -111,29 +114,65 @@ header {
     transition: .5s;
     top: 77%;
     left: 20%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     flex-direction: row;
     text-align: center;
     padding: 8px;
 }
-.first button:hover{
+
+.first button:hover {
     background: #ffffff;
     color: #7b3f00;
     border: 2px solid #7b3f00;
 }
 
 .search {
-    width: 80%;
+    width: 100%;
+    background-color: #f8f8ea;
     display: flex;
     justify-content: center;
-    margin: auto;
 }
-.hero-content{
+
+.search-btn {
+    margin-left: 5px;
+    margin-top: 20px;
+    background: #7b3f00;
+    color: #f8f8ea;
+  
+    border: 2px solid #7b3f00;
+    font-size: larger;
+    border-radius: 6px;
+    cursor: pointer;
+
+}
+
+.search-input-wrapper {
+    position: relative;
+    width: 60%;
+    margin-top: 25px;
+    margin-bottom: 18px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px 10px 10px 40px;
+    /* Add padding to the left for the icon */
+    border: 1px solid #7b3f00;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1em;
+}
+
+.search-icon {
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    font-size: 50px;
-    flex-direction: row;
-    text-align: center;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #7b3f00;
+}
+
+
+.search-btn:hover {
+    background: #f8f8ea;
+    color: #7b3f00;
 }
