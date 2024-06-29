@@ -134,16 +134,17 @@ header {
 }
 
 .search-btn {
+    padding: 5px 5px;
     margin-left: 5px;
-    margin-top: 20px;
+    margin-top: 25px;
+    margin-bottom: 16px;
     background: #7b3f00;
     color: #f8f8ea;
-  
-    border: 2px solid #7b3f00;
+    border: none;
     font-size: larger;
-    border-radius: 6px;
+    border-radius: 25px;
     cursor: pointer;
-
+    transition: background-color 0.3s;
 }
 
 .search-input-wrapper {
@@ -156,9 +157,8 @@ header {
 .search-input {
     width: 100%;
     padding: 10px 10px 10px 40px;
-    /* Add padding to the left for the icon */
     border: 1px solid #7b3f00;
-    border-radius: 5px;
+    border-radius: 45px;
     outline: none;
     font-size: 1em;
 }
@@ -175,4 +175,5 @@ header {
 .search-btn:hover {
     background: #f8f8ea;
     color: #7b3f00;
+    border: solid 2px #7b3f00;
 }
