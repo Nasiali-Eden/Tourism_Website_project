@@ -290,12 +290,13 @@ header {
     color: #00107b;
 }
 
+.card-content .description{
+    color: #00107b;
+}
+
 .card-content>p {
     margin: 8px 0;
-    font-size: 18px;
-}
-.card-content>p:first-child {
-    color: #00107b;
+    font-size: 15px;
 }
 
 .price {
