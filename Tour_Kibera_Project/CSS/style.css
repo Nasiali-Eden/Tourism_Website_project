@@ -108,12 +108,12 @@ header {
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    font-size: 2.1em;
+    font-size: clamp(1rem, 1.5vw,2.1em);
     color: #ffffff;
     font-weight: 400;
     transition: .5s;
     top: 77%;
-    left: 20%;
+    left: 10%;
     transform: translate(-50%, -50%);
     flex-direction: row;
     text-align: center;
