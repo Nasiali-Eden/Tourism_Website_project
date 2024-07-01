@@ -15,13 +15,10 @@ header {
     margin: auto;
     margin-bottom: 0px;
     position: fixed;
-
     top: 0;
     left: 0;
     right: 0;
-    /* Ensure background color covers content */
     z-index: 1000;
-    /* Ensures header stays above other content */
 }
 
 .logo-container {
@@ -31,11 +28,8 @@ header {
 
 .logo-img {
     height: 70px;
-    /* Adjust size as needed */
     margin-left: 100px;
-    /* Space between logo and text */
 }
-
 
 .navigation {
     padding: 14px;
@@ -96,12 +90,17 @@ header {
     margin-top: 0px;
 }
 
-.first img {
+.img-container {
+    position: relative;
+    width: 100%;
+}
+
+.img-container img {
     height: auto;
     width: 100%;
 }
 
-.first button {
+.img-container button {
     background: #7b3f00;
     position: absolute;
     outline: none;
@@ -120,7 +119,7 @@ header {
     padding: 8px;
 }
 
-.first button:hover {
+.img-container button:hover {
     background: #ffffff;
     color: #7b3f00;
     border: 2px solid #7b3f00;
@@ -171,9 +170,76 @@ header {
     color: #7b3f00;
 }
 
-
 .search-btn:hover {
     background: #f8f8ea;
     color: #7b3f00;
     border: solid 2px #7b3f00;
+}
+
+.Grid {
+    width: 100%;
+    text-align: center;
+    background-color: #f8f8ea;
+    margin-top: 0px;
+    justify-content: center;
+}
+
+.Grid h1 {
+    color: #7b3f00;
+    margin-top: 0px;
+    padding: 20px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+    justify-content: center; /* Center the content horizontally */
+}
+
+.column {
+    flex: auto;
+    max-width: 25%;
+    padding: 0 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center images and text horizontally within column */
+}
+
+.img-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.column img {
+    margin-top: 8px;
+    width: 100%;
+    vertical-align: middle;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.column:first-child .img-container img,
+.column:last-child .img-container img {
+    height: 480px;
+}
+
+.column:nth-child(2) .img-container img {
+    height: 240px;
+}
+
+.img-container p {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px 0;
+    margin: 0;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
 }
