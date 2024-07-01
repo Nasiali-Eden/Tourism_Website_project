@@ -19,6 +19,7 @@ header {
     left: 0;
     right: 0;
     z-index: 1000;
+    background-color: #ffffff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -39,7 +40,7 @@ header {
 .navigation a {
     position: relative;
     font-size: 1.1em;
-    color: #7b3f00;
+    color: #000000;
     text-decoration: none;
     font-weight: 500;
     margin-left: 40px;
@@ -67,13 +68,13 @@ header {
 .navigation .lgn-btn {
     width: 130px;
     height: 50px;
-    background: transparent;
-    border: 2px solid #7b3f00;
+    border: none;
     outline: none;
     border-radius: 6px;
+    background: #7b3f00;
+    color: #ffffff;
     cursor: pointer;
     font-size: 1.1em;
-    color: #7b3f00;
     font-weight: 500;
     margin-left: 40px;
     transition: .5s;
@@ -81,8 +82,9 @@ header {
 }
 
 .navigation .lgn-btn:hover {
-    background: #7b3f00;
-    color: #ffffff;
+    background: transparent;
+    border: 2px solid #7b3f00;
+    color: #000000;
 }
 
 .first {
@@ -108,7 +110,7 @@ header {
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    font-size: clamp(1rem, 1.5vw,2.1em);
+    font-size: clamp(1rem, 1.5vw, 2.1em);
     color: #ffffff;
     font-weight: 400;
     transition: .5s;
@@ -129,7 +131,7 @@ header {
 
 .search {
     width: 100%;
-    background-color: #f8f8ea;
+    background-color: #ffffff;
     display: flex;
     justify-content: center;
 }
@@ -140,10 +142,10 @@ header {
     margin-top: 25px;
     margin-bottom: 16px;
     background: #7b3f00;
-    color: #f8f8ea;
+    color: #ffffff;
     border: none;
     font-size: larger;
-    border-radius: 25px;
+    border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
@@ -158,8 +160,9 @@ header {
 .search-input {
     width: 100%;
     padding: 10px 10px 10px 40px;
-    border: 1px solid #7b3f00;
-    border-radius: 45px;
+    border: 3px solid #7b3f00;
+    border-bottom-left-radius: 45px;
+    border-top-left-radius: 45px;
     outline: none;
     font-size: 1em;
 }
@@ -173,7 +176,7 @@ header {
 }
 
 .search-btn:hover {
-    background: #f8f8ea;
+    background: #ffffff;
     color: #7b3f00;
     border: solid 2px #7b3f00;
 }
@@ -191,7 +194,8 @@ header {
     display: flex;
     flex-wrap: wrap;
     padding: 0 4px;
-    justify-content: center; /* Center the content horizontally */
+    justify-content: center;
+    /* Center the content horizontally */
 }
 
 .column {
@@ -200,7 +204,8 @@ header {
     padding: 0 4px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center images and text horizontally within column */
+    align-items: center;
+    /* Center images and text horizontally within column */
 }
 
 .img-container {
@@ -215,7 +220,7 @@ header {
     margin-top: 8px;
     width: 100%;
     vertical-align: middle;
-    border-radius: 6px;
+    border-radius: 8px;
     object-fit: cover;
 }
 
@@ -237,10 +242,90 @@ header {
     color: white;
     padding: 5px 0;
     margin: 0;
-    border-bottom-left-radius: 6px;
-    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
-.footer{
+.booking-cards {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: auto;
+    margin-top: 70px;
+    margin-bottom: 30px;
+}
+
+.booking-cards h1 {
+    grid-column: 1 / -1;
+    /* Make the h1 span all columns */
+    text-align: center;
+    color: #00107b;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+
+.card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 250px;
+}
+
+.card>img {
+    max-width: 250px;
+    height: auto;
+}
+
+.card-content {
+    padding-left: 4px;
+    padding: 1rem;
+}
+
+.card-content h2 {
+    margin: 0 0 0.5rem 0;
+    color: #00107b;
+}
+
+.card-content>p {
+    margin: 8px 0;
+    font-size: 18px;
+}
+.card-content>p:first-child {
+    color: #00107b;
+}
+
+.price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #7b3f00;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card-content>button {
+    margin: 8px 0;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    color: white;
+    background-color: #7b3f00;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.card-content>button:hover {
+    background-color: rgb(255, 255, 255);
+    color: #7b3f00;
+}
+
+.footer {
     color: #7b3f00;
 }
