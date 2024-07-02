@@ -15,8 +15,15 @@ hr{
     justify-content: space-between;
     width: 80%;
     margin: auto;
+    
 }
 .footer-section2{
     text-align: center;
-   
 }
+.footer1{
+    margin-right: 10px;
+}
+.logo-img-footer{
+    height: 80px;
+}
+

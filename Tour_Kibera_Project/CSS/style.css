@@ -321,10 +321,13 @@ header {
     background-color: #7b3f00;
     cursor: pointer;
     border-radius: 6px;
+    transition: 0.15s;
 }
 
 .card-content>button:hover {
     background-color: rgb(255, 255, 255);
     color: #7b3f00;
+    border: 1px solid #7b3f00;
+    transition: 0.75s;
 }
 
