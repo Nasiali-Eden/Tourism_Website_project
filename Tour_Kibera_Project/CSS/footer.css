@@ -1,0 +1,22 @@
+footer {
+    background-color: #7b3f00;
+    color: #ffffff;
+    width: 100%;
+    margin-top: 6rem;
+    margin-bottom: 0px;
+    padding-bottom: 8px; 
+}
+hr{
+    width: 80%;
+}
+
+.footer-section{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+}
+.footer-section2{
+    text-align: center;
+   
+}

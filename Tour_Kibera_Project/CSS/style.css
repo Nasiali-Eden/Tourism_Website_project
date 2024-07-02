@@ -4,8 +4,9 @@
 
 body {
     width: 100%;
-    margin: auto;
+    margin: 0px;
     background-color: #ffffff;
+   
 }
 
 header {
@@ -327,6 +328,3 @@ header {
     color: #7b3f00;
 }
 
-.footer {
-    color: #7b3f00;
-}
