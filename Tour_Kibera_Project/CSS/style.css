@@ -362,8 +362,9 @@ header {
 }
 
 .about-text p {
-    color: #333;
-    font-size: 1em;
+    color: #000000;
+    font-size: 1.5em;
+    font-weight: 400;
 }
 
 .about-image {
