@@ -306,11 +306,6 @@ header {
     color: #7b3f00;
 }
 
-.cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
 
 .card-content>button {
     margin: 8px 0;
@@ -335,7 +330,7 @@ header {
     width: 80%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+    gap: 1rem;
     margin: auto;
     margin-top: 70px;
     margin-bottom: 30px;
@@ -350,7 +345,35 @@ header {
     font-size: 2em;
 }
 
+.horiz-card{
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 280px;
+    max-height: 80px;
+}
 
+.horiz-card>img{
+    max-width: 80px;
+    height: 80px;
+}
+
+.horiz-card-content{
+    padding-left: 4px;
+    padding: 1rem;
+}
+.horiz-card-content h2 {
+    margin: 0 0 0.5rem 0;
+    color: #00107b;
+}
+
+.horiz-card-content .description {
+    color: #00107b;
+    margin: 8px 0;
+    font-size: 15px;
+}
 
 .about {
     width: 80%;
