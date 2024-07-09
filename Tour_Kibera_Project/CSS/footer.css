@@ -7,9 +7,7 @@ footer {
     padding-bottom: 8px; 
     padding-top: 8px;
 }
-hr{
-    width: 80%;
-}
+
 
 .footer-section{
     display: flex;
@@ -25,6 +23,7 @@ hr{
     margin-right: 10px;
 }
 .logo-img-footer{
-    height: 80px;
+    height: 70px;
+    width: auto;
 }
 
