@@ -247,7 +247,7 @@ header {
 }
 
 .booking-cards {
-    width: 80%;
+    width: 90%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5rem;
@@ -278,7 +278,7 @@ header {
 
 .card:hover{
     background-color: white;
-    transform: scale(1.05);
+    transform: scale(1.08);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
