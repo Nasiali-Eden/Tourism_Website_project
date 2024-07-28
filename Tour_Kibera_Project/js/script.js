@@ -72,11 +72,11 @@ function triggerIntasendPayment(bookingDetails) {
     }
 
     // Initialize Intasend
-    const intasend = new window.intasend({
+    const intasend = new window.IntaSend({
         publicAPIKey: "ISPubKey_test_ee5f4860-80fb-4670-a8ef-3258658af886",
         live: false,
     });
-
+    
     // Attach Event Listeners
     intasend.on("COMPLETE", (results) => {
         console.log("Payment successful", results);
@@ -100,9 +100,9 @@ function triggerIntasendPayment(bookingDetails) {
 }
 
 // Calculate Booking Amount Function
-function calculateBookingAmount(details) {
+function calculateBookingAmount(bookingDetails) {
     // Implement your booking amount calculation logic based on the details
     const basePrice = 1000; // Example base price per day per visitor
-    const mealPrice = details.meals === "Yes" ? 500 : 0; // Example meal price per day
-    return (basePrice + mealPrice) * details.visitors * details.days;
+    const mealPrice = bookingDetails.meals === "Yes" ? 500 : 0; // Example meal price per day
+    return (basePrice + mealPrice) * bookingDetails.visitors * bookingDetails.days;
 }
