@@ -73,7 +73,7 @@ function triggerIntasendPayment(bookingDetails) {
 
     // Initialize Intasend
     const intasend = new window.intasend({
-        publicAPIKey: "ISPubKey_test_eef4860-80fb-4670-a8ef-325865af886",
+        publicAPIKey: "ISPubKey_test_ee5f4860-80fb-4670-a8ef-3258658af886",
         live: false,
     });
 
