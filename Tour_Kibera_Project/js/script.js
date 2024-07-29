@@ -24,12 +24,15 @@ function openBookingPage(placeName, placeDescription) {
           <label for="days">Number of Stay Days:</label>
           <input type="number" id="days" name="days" min="1" required>
           <label for="meals">Full Board Meals:</label>
+
           <select id="meals" name="meals" required>
               <option value="yes">Yes</option>
               <option value="no">No</option>
           </select>
+
           <label for="additional">Additional Requests:</label>
           <textarea id="additional" name="additional"></textarea>
+
           <button type="submit" class="intaSendPayButton">Confirm Booking</button>
       </form>
       <button class="btn back-btn">Back</button>
@@ -62,6 +65,7 @@ function handleBookingFormSubmit(event) {
   // Proceed to IntaSend Payment
   triggerIntaSendPayment(bookingDetails);
 }
+
 
 function triggerIntaSendPayment(bookingDetails) {
   const paymentButton = document.querySelector(".intaSendPayButton");
