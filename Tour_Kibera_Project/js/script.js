@@ -130,10 +130,7 @@ function saveBookingToFirebase(bookingDetails) {
     set(dbRef, {
       userId: userId,
       userEmail: userEmail,
-      visitors: bookingDetails.visitors,
-      days: bookingDetails.days,
-      placeName: bookingDetails.placeName,
-      placeDescription: bookingDetails.placeDescription,
+      ...bookingDetails,
       timestamp: Timestamp.now(), // Add the current timestamp
     })
       .then(() => {
