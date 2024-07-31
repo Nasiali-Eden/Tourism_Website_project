@@ -1,0 +1,86 @@
+* {
+  font-family: "Poppins", sans-serif;
+}
+#main > h1 {
+  margin-bottom: 8%;
+  text-align: center;
+  color: #00107b;
+  letter-spacing: 0.1em;
+}
+
+.p {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #000;
+  line-height: 0.1em;
+}
+
+.p span {
+  background: #fff;
+  padding: 0 10px;
+}
+
+input {
+  margin-bottom: 3%;
+}
+
+input:last-of-type {
+  margin-bottom: 0;
+}
+
+input,
+button {
+  padding: 3%;
+  width: 100%;
+}
+
+.login-container {
+  background-color: white;
+  padding: 5%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 40vw;
+  margin: auto;
+  height: 70vh;
+  margin-top: 6vh;
+  border-radius: 6px;
+}
+
+#submit,
+#create-acct-btn {
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  background: #7b3f00;
+  margin-top: 5%;
+  color: #fff;
+}
+
+button:hover {
+  background: transparent;
+  border: 2px solid #7b3f00;
+  color: #000000;
+  cursor: pointer;
+}
+
+#sign-up {
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  background: #7b3f00;
+  margin-top: 5%;
+  color: #fff;
+}
+
+#create-acct {
+  display: none;
+}
+
+#return-btn {
+  background: none;
+  color: grey;
+  text-decoration: underline;
+  border: none;
+  margin-top: 3%;
+}
