@@ -1,11 +1,10 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getAuth } from "firebase/auth"; // Importing Firebase Authentication
-import { getDatabase } from "firebase/database"; 
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+import { getAnalytics, logEvent } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-analytics.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
+import { getDatabase } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js"; 
 
 // Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyBIJZgmMUuz9tE7979iEFp_riSiGRjOpsY",
   authDomain: "tesla-ae311.firebaseapp.com",
@@ -19,8 +18,8 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
-const auth = getAuth();
-const analytics = getAnalytics(app);
+const auth = getAuth(app);
+const analytics = getAnalytics(app); // Initialize analytics
 
 const main = document.getElementById("main");
 const returnBtn = document.getElementById("return-btn");
@@ -33,44 +32,31 @@ const signupButton = document.getElementById("sign-up");
 const signupEmailIn = document.getElementById("email-signup");
 const confirmSignupEmailIn = document.getElementById("confirm-email-signup");
 const signupPasswordIn = document.getElementById("password-signup");
-const confirmSignUpPasswordIn = document.getElementById(
-  "confirm-password-signup"
-);
+const confirmSignUpPasswordIn = document.getElementById("confirm-password-signup");
 const createacct = document.getElementById("create-acct");
 
 // Start with this
 const createacctbtn = document.getElementById("create-acct-btn");
 
-var email,
-  password,
-  signupEmail,
-  signupPassword,
-  confirmSignupEmail,
-  confirmSignUpPassword;
-
+// Event listeners for account creation
 createacctbtn.addEventListener("click", function () {
   var isVerified = true;
 
-  signupEmail = signupEmailIn.value;
-  confirmSignupEmail = confirmSignupEmailIn.value;
-  if (signupEmail != confirmSignupEmail) {
+  const signupEmail = signupEmailIn.value;
+  const confirmSignupEmail = confirmSignupEmailIn.value;
+  if (signupEmail !== confirmSignupEmail) {
     window.alert("Email fields do not match. Try again.");
     isVerified = false;
   }
 
-  signupPassword = signupPasswordIn.value;
-  confirmSignUpPassword = confirmSignUpPasswordIn.value;
-  if (signupPassword != confirmSignUpPassword) {
+  const signupPassword = signupPasswordIn.value;
+  const confirmSignUpPassword = confirmSignUpPasswordIn.value;
+  if (signupPassword !== confirmSignUpPassword) {
     window.alert("Password fields do not match. Try again.");
     isVerified = false;
   }
 
-  if (
-    signupEmail == null ||
-    confirmSignupEmail == null ||
-    signupPassword == null ||
-    confirmSignUpPassword == null
-  ) {
+  if (!signupEmail || !confirmSignupEmail || !signupPassword || !confirmSignUpPassword) {
     window.alert("Please fill out all required fields.");
     isVerified = false;
   }
@@ -78,47 +64,44 @@ createacctbtn.addEventListener("click", function () {
   if (isVerified) {
     createUserWithEmailAndPassword(auth, signupEmail, signupPassword)
       .then((userCredential) => {
-        // Signed in
         const user = userCredential.user;
-        // ...
         window.alert("Success! Account created.");
+
+        // Log event for account creation
+        logEvent(analytics, 'sign_up', { method: 'Email' });
+
         window.location = "./destinations/destinations.html";
       })
       .catch((error) => {
-        const errorCode = error.code;
         const errorMessage = error.message;
-        // ..
         window.alert("Error occurred. Try again.");
         window.alert(errorMessage);
       });
   }
 });
 
+// Event listener for login
 submitButton.addEventListener("click", function () {
-  email = emailInput.value;
-  console.log(email);
-  password = passwordInput.value;
-  console.log(password);
+  const email = emailInput.value;
+  const password = passwordInput.value;
 
   signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-      // Signed in
       const user = userCredential.user;
-
       window.alert("Success! Welcome back!");
-      window.location = "./destinations/destinations.html";
 
-      // ...
+      // Log event for login
+      logEvent(analytics, 'login', { method: 'Email' });
+
+      window.location = "./destinations/destinations.html";
     })
     .catch((error) => {
-      const errorCode = error.code;
       const errorMessage = error.message;
       window.alert("Error occurred. Try again.");
     });
 });
 
 // Navigate through the login / Register components
-
 signupButton.addEventListener("click", () => {
   main.style.display = "none";
   createacct.style.display = "block";
@@ -128,5 +111,3 @@ returnBtn.addEventListener("click", function () {
   main.style.display = "block";
   createacct.style.display = "none";
 });
-
-analytics.logEvent("notification_received");
