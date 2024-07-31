@@ -6,13 +6,13 @@ import { getDatabase } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBIJZgmMUuz9tE7979iEFp_riSiGRjOpsY",
-  authDomain: "tesla-ae311.firebaseapp.com",
-  projectId: "tesla-ae311",
-  storageBucket: "tesla-ae311.appspot.com",
-  messagingSenderId: "433238092555",
-  appId: "1:433238092555:web:ef224ef3c32cd8b93d900e",
-  measurementId: "G-4BRJZBYBWB"
+  apiKey: "AIzaSyAEWN8yRLD53e55NcGX9htv8Zu0kaDZb88",
+  authDomain: "tdpwebsite-f8441.firebaseapp.com",
+  projectId: "tdpwebsite-f8441",
+  storageBucket: "tdpwebsite-f8441.appspot.com",
+  messagingSenderId: "271347329257",
+  appId: "1:271347329257:web:5c180108c673c78b362878",
+  measurementId: "G-XCQEVZNS6H"
 };
 
 // Initialize Firebase
@@ -70,7 +70,7 @@ createacctbtn.addEventListener("click", function () {
         // Log event for account creation
         logEvent(analytics, 'sign_up', { method: 'Email' });
 
-        window.location = "./destinations/destinations.html";
+        window.location = "../Html/index.html";
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -93,7 +93,7 @@ submitButton.addEventListener("click", function () {
       // Log event for login
       logEvent(analytics, 'login', { method: 'Email' });
 
-      window.location = "./destinations/destinations.html";
+      window.location = "../Html/index.html";
     })
     .catch((error) => {
       const errorMessage = error.message;
