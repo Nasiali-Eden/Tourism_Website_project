@@ -107,7 +107,7 @@ function triggerIntaSendPayment(bookingDetails) {
 // Calculate Booking Amount Function
 function calculateBookingAmount(bookingDetails) {
 // Implement your booking amount calculation logic based on the details
-const basePrice = 1000; // Example base price per day per visitor
-const mealPrice = bookingDetails.meals === "Yes" ? 500 : 0; // Example meal price per day
-return (basePrice + mealPrice) * bookingDetails.visitors * bookingDetails.days;
+const price_per_night = 2500; // Example base price per day per visitor
+const mealPrice = bookingDetails.meals === "yes" ? 500 : 0; // Example meal price per day
+return (price_per_night + mealPrice) * bookingDetails.visitors * bookingDetails.days;
 }
