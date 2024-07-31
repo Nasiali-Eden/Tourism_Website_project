@@ -1,3 +1,5 @@
+import { Timestamp } from "firebase/firestore/lite";
+
 document.addEventListener("DOMContentLoaded", () => {
   const bookButtons = document.querySelectorAll(".book-now");
 
@@ -60,6 +62,9 @@ function handleBookingFormSubmit(event) {
     days: formData.get("days"),
     meals: formData.get("meals"),
     additional: formData.get("additional"),
+    placeName: placeName,
+    placeDescription: placeDescription,
+    time: Timestamp.now(),
   };
 
   // Proceed to IntaSend Payment
@@ -84,6 +89,7 @@ function triggerIntaSendPayment(bookingDetails) {
   // Attach event listeners
   intasend.on("COMPLETE", (results) => {
     console.log("Payment successful", results);
+    saveBookingToFirebase(bookingDetails);
     // Handle successful payment (e.g., save booking details to your database)
   });
   intasend.on("FAILED", (results) => {
@@ -110,4 +116,35 @@ function calculateBookingAmount(bookingDetails) {
 const price_per_night = 2500; // Example base price per day per visitor
 const mealPrice = bookingDetails.meals === "yes" ? 500 : 0; // Example meal price per day
 return (price_per_night + mealPrice) * bookingDetails.visitors * bookingDetails.days;
+}
+
+function saveBookingToFirebase(bookingDetails) {
+  const user = firebase.auth().currentUser; // Get the currently signed-in user
+
+  if (user) {
+    const userId = user.uid; // User's Firebase UID
+    const userEmail = user.email; // User's email
+
+    const dbRef = ref(database, "bookings/" + userId + "/" + Date.now()); // Create a new unique path for each booking
+
+    // Save booking details to the specified reference
+    set(dbRef, {
+      userId: userId,
+      userEmail: userEmail,
+      visitors: bookingDetails.visitors,
+      days: bookingDetails.days,
+      placeName: bookingDetails.placeName,
+      placeDescription: bookingDetails.placeDescription,
+      timestamp: Timestamp.now(), // Add the current timestamp
+    })
+      .then(() => {
+        console.log("Booking saved successfully");
+      })
+      .catch((error) => {
+        console.error("Error saving booking: ", error);
+      });
+  } else {
+    console.error("No user is signed in.");
+    // Optionally, handle the case where no user is signed in
+  }
 }
