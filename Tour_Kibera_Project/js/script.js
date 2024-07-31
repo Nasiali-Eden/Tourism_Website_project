@@ -126,7 +126,6 @@ function saveBookingToFirebase(bookingDetails) {
 
     const dbRef = ref(database, "bookings/" + userId + "/" + Date.now()); // Create a new unique path for each booking
 
-    // Save booking details to the specified reference
     set(dbRef, {
       userId: userId,
       userEmail: userEmail,
