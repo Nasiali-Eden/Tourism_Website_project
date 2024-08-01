@@ -1,4 +1,4 @@
-import { Timestamp } from "firebase/firestore/lite";
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const bookButtons = document.querySelectorAll(".book-now");
@@ -49,10 +49,10 @@ function openBookingPage(placeName, placeDescription) {
 
   document
     .querySelector(".booking-form")
-    .addEventListener("submit", handleBookingFormSubmit);
+    .addEventListener("submit", (event) => handleBookingFormSubmit(event, placeName, placeDescription));
 }
 
-function handleBookingFormSubmit(event) {
+function handleBookingFormSubmit(event, placeName, placeDescription) {
   event.preventDefault();
   const form = event.target;
   const formData = new FormData(form);
@@ -62,9 +62,8 @@ function handleBookingFormSubmit(event) {
     days: formData.get("days"),
     meals: formData.get("meals"),
     additional: formData.get("additional"),
-    placeName: placeName,
-    placeDescription: placeDescription,
-    time: Timestamp.now(),
+    placeName: placeName, // Set placeName
+    placeDescription: placeDescription, // Set placeDescription
   };
 
   // Proceed to IntaSend Payment
@@ -130,7 +129,7 @@ function saveBookingToFirebase(bookingDetails) {
       userId: userId,
       userEmail: userEmail,
       ...bookingDetails,
-      timestamp: Timestamp.now(), // Add the current timestamp
+      timestamp: firebase.firestore.Timestamp.now(),
     })
       .then(() => {
         console.log("Booking saved successfully");
