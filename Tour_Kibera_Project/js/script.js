@@ -1,5 +1,3 @@
-
-
 document.addEventListener("DOMContentLoaded", () => {
   const bookButtons = document.querySelectorAll(".book-now");
 
@@ -80,7 +78,7 @@ function triggerIntaSendPayment(bookingDetails) {
 
   // Initialize IntaSend
   const intasend = new window.IntaSend({
-    publicAPIKey: "ISPubKey_test_ee5f4860-80fb-4670-a8ef-3258658af886",
+    publicAPIKey: "ISPubKey_test_850d21ed-41b4-419e-bf7f-c708616728b1",
     live: false, // set to true when going live
   });
 
